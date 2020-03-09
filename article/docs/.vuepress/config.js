@@ -11,7 +11,21 @@ module.exports = {
   title: '技术周刊',
   description: '前端技术周刊',
   themeConfig: {
-    search: false,
-    searchMaxSuggestions: 10
-  }
+    nav: [
+      {
+        text: '年度',
+        ariaLabel: '年度选择',
+        items: [
+          { text: '2020年', link: '/2020/第11周' },
+        ]
+      }
+    ],
+    sidebar: {
+      '/2020/': [
+        '第11周',
+        '第12周'
+      ]
+    }
+  },
+  smoothScroll: true
 }
