@@ -13,3 +13,17 @@
   color: white;
   margin: 0;
 }
+
+.layoutContent {
+  height: 100%;
+  background-color: #fff;
+}
+
+.layoutSider {
+  background: #fff;
+}
+
+.logo {
+  padding: 8px 0 8px 24px;
+  font-size: 22px;
+}

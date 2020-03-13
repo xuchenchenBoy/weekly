@@ -7,7 +7,9 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages/index' },
+        { path: '/allArticleList', component: '../pages/allArticleList' },
+        { path: '/recommendArticleList', component: '../pages/recommendArticleList' }
       ]
     }
   ],
@@ -19,7 +21,7 @@ export default {
       dynamicImport: { webpackChunkName: true },
       title: 'frontend',
       dll: true,
-      
+
       routes: {
         exclude: [
           /components\//,
