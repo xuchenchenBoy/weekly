@@ -1,4 +1,3 @@
-
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
@@ -7,26 +6,26 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' },
-        { path: '/allArticleList', component: '../pages/allArticleList' },
-        { path: '/recommendArticleList', component: '../pages/recommendArticleList' }
-      ]
-    }
+        { path: '/allArticleList', component: '../pages/allArticleList/index' },
+        { path: '/recommendArticleList', component: '../pages/recommendArticleList/index' },
+      ],
+    },
   ],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: true,
-      dva: false,
-      dynamicImport: { webpackChunkName: true },
-      title: 'frontend',
-      dll: true,
+    [
+      'umi-plugin-react',
+      {
+        antd: true,
+        dva: false,
+        dynamicImport: { webpackChunkName: true },
+        title: 'frontend',
+        dll: true,
 
-      routes: {
-        exclude: [
-          /components\//,
-        ],
+        routes: {
+          exclude: [/components\//],
+        },
       },
-    }],
+    ],
   ],
-}
+};

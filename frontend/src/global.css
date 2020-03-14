@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -6,3 +8,16 @@ body {
   margin: 0;
 }
 
+.ant-form.search-bar {
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.table-list {
+  background-color: #fff;
+}
+
+.pagination {
+  text-align: right;
+}

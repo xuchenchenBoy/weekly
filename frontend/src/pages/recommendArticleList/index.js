@@ -1,9 +1,5 @@
 import styles from './index.css';
 
 export default function() {
-  return (
-    <div >
-      content
-    </div>
-  );
+  return <div>content</div>;
 }
