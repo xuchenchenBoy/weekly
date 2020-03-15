@@ -8,6 +8,7 @@ export default {
       routes: [
         { path: '/allArticleList', component: '../pages/allArticleList/index' },
         { path: '/recommendArticleList', component: '../pages/recommendArticleList/index' },
+        { path: '/login', component: '../pages/login/index' },
       ],
     },
   ],
@@ -18,7 +19,7 @@ export default {
       {
         antd: true,
         dva: false,
-        dynamicImport: { webpackChunkName: true },
+        dynamicImport: { webpackChunkName: true, loadingComponent: '@/components/Loading/index' },
         title: 'frontend',
         dll: true,
 

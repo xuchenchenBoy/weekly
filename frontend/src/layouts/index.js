@@ -1,81 +1,34 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
-import { FileSearchOutlined, FilterOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import styles from './index.css';
-import { Link } from 'umi';
+import BasicLayout from './BasicLayout';
+import Login from '@/pages/login';
 
-const { Content, Sider, Header } = Layout;
-
-class BasicLayout extends React.PureComponent {
+class EntryLayout extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       selectMenuKey: '', // 选择的菜单
     };
+
+    // 重新登陆
+    if (!this.isLogin()) {
+      this.props.history.replace('/login');
+    }
   }
 
-  componentDidMount() {
-    const selectMenuKey = this.props.location.pathname.slice(1);
-    this.setState({ selectMenuKey });
+  isLogin() {
+    const { pathname } = this.props.location;
+    const isNotLoginPath = pathname.indexOf('login') === -1;
+    return localStorage.getItem('username') && isNotLoginPath;
   }
-
-  handleSelectMenuItem = ({ key }) => {
-    this.setState({
-      selectMenuKey: key,
-    });
-  };
 
   render() {
-    const { selectMenuKey } = this.state;
-    return (
-      <Layout className={styles.layoutContent}>
-        <Sider
-          breakpoint="sm"
-          collapsedWidth="0"
-          className={styles.layoutSider}
-          onBreakpoint={broken => {
-            console.log(broken);
-          }}
-          onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
-          }}
-        >
-          <div className={styles.logo}>weekly</div>
-          <Menu mode="inline" selectedKeys={[selectMenuKey]} onSelect={this.handleSelectMenuItem}>
-            <Menu.Item key="allArticleList">
-              <Link to="allArticleList">
-                <FileSearchOutlined />
-                <span className="nav-text">文章资源</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="recommendArticleList">
-              <Link to="recommendArticleList">
-                <FilterOutlined />
-                <span className="nav-text">推荐文章</span>
-              </Link>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout>
-          <Header
-            style={{
-              position: 'fixed',
-              zIndex: 1,
-              width: '100%',
-              backgroundColor: '#fff',
-              height: '53px',
-              lineHeight: '53px',
-            }}
-          >
-            <div className="logo" />
-          </Header>
-          <Content style={{ margin: '16px 16px 0', paddingTop: '53px' }}>
-            {this.props.children}
-          </Content>
-        </Layout>
-      </Layout>
+    const { pathname } = this.props.location;
+    return this.isLogin() ? (
+      <BasicLayout pathname={pathname}>{this.props.children}</BasicLayout>
+    ) : (
+      <Login />
     );
   }
 }
 
-export default BasicLayout;
+export default EntryLayout;

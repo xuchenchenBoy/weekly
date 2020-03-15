@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Form, Row, Col, Input, Button, DatePicker, Table, Pagination } from 'antd';
-import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import React from 'react';
+import { Form, Row, Col, Button, DatePicker, Table, Pagination } from 'antd';
 import Separate from '@/components/Separate';
 
 const { RangePicker } = DatePicker;

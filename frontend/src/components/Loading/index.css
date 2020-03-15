@@ -1,0 +1,92 @@
+:global() {
+  .loading {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+
+  @-webkit-keyframes spin {
+    0%,
+    100% {
+      box-shadow: 5px 0px 0 0px #f00;
+    }
+    12% {
+      box-shadow: 5px 5px 0 0 #f00;
+    }
+    25% {
+      box-shadow: 0 5px 0 0px #f00;
+    }
+    37% {
+      box-shadow: -5px 5px 0 0 #f00;
+    }
+    50% {
+      box-shadow: -5px 0 0 0 #f00;
+    }
+    62% {
+      box-shadow: -5px -5px 0 0 #f00;
+    }
+    75% {
+      box-shadow: 0px -5px 0 0 #f00;
+    }
+    87% {
+      box-shadow: 5px -5px 0 0 #f00;
+    }
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      box-shadow: 5px 0px 0 0px #f00;
+    }
+    12% {
+      box-shadow: 5px 5px 0 0 #f00;
+    }
+    25% {
+      box-shadow: 0 5px 0 0px #f00;
+    }
+    37% {
+      box-shadow: -5px 5px 0 0 #f00;
+    }
+    50% {
+      box-shadow: -5px 0 0 0 #f00;
+    }
+    62% {
+      box-shadow: -5px -5px 0 0 #f00;
+    }
+    75% {
+      box-shadow: 0px -5px 0 0 #f00;
+    }
+    87% {
+      box-shadow: 5px -5px 0 0 #f00;
+    }
+  }
+
+  .loading:before,
+  .loading:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    -webkit-animation: 1s spin linear infinite;
+    animation: 1s spin linear infinite;
+  }
+
+  .loading:before {
+    transform: rotateX(70deg);
+  }
+
+  .loading:after {
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+  }
+}
