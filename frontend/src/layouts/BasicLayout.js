@@ -48,7 +48,7 @@ class BasicLayout extends React.PureComponent {
             <Menu.Item key="recommendArticleList">
               <Link to="recommendArticleList">
                 <FilterOutlined />
-                <span className="nav-text">推荐文章</span>
+                <span className="nav-text">已推荐文章</span>
               </Link>
             </Menu.Item>
           </Menu>
