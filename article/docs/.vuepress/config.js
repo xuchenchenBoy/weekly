@@ -10,6 +10,7 @@
 module.exports = {
   title: '技术周刊',
   description: '前端技术周刊',
+  base: '/weekly/',
   themeConfig: {
     nav: [
       { text: '2020年', link: '/2020/第17周' },
