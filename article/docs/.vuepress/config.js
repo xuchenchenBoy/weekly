@@ -11,7 +11,6 @@ module.exports = {
   title: '技术周刊',
   description: '前端技术周刊',
   themeConfig: {
-    lastUpdated: 'Last Updated', 
     nav: [
       { text: '2020年', link: '/2020/第17周' },
     ],

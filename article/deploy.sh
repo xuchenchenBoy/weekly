@@ -4,7 +4,7 @@
 # 构建
 npm run docs:build
 # 导航到构建输出目录
-cd article/docs/.vuepress/dist
+cd ./docs/.vuepress/dist
 
 git init
 git add ./
